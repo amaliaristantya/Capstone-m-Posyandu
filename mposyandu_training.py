@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 from sklearn import svm
 from sklearn import pickle
-from sklearn.externals import joblib
+import joblib
 
 # Fill in your Cloud Storage bucket name
 BUCKET_NAME = 'x-circle-314022-mposyandu'
@@ -46,8 +46,8 @@ classifier = svm.SVC(kernel='linear')
 classifier.fit(mposyandu_data, mposyandu_target)
 
 # Export the classifier to a file
-with open('model.pkl', 'wb') as model_file:
-  pickle.dump(classifier, model_file)
+model_filename = 'model.joblib'
+joblib.dump(classifier, model_filename)
 # [END train-and-save-model]
 
 
