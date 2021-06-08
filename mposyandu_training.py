@@ -9,7 +9,6 @@ import sys
 import pandas as pd
 import numpy as np
 from sklearn import svm
-from sklearn import pickle
 import joblib
 
 # Fill in your Cloud Storage bucket name
